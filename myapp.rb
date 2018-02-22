@@ -1,6 +1,7 @@
+# Hello World Application
 class MyApp
-  def greet
-    puts "Someone said hello to me"
-    'Hello, world!'
+  def greet(name)
+    puts "#{name} said hello to me"
+    "Hello, #{name}!"
   end
 end
