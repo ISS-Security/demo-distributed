@@ -11,6 +11,6 @@ end
 
 object = MyApp.new
 
-puts "Starting Hello World Service...\n"
+puts "Starting Hello World Service on localhost:9999...\n"
 DRb.start_service('druby://localhost:9999', object);
 DRb.thread.join
