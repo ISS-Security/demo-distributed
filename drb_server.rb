@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'drb/drb'
 $stdout.sync = true
 
@@ -12,5 +14,5 @@ end
 object = MyApp.new
 
 puts "Starting Hello World Service on localhost:9999...\n"
-DRb.start_service('druby://localhost:9999', object);
+DRb.start_service('druby://localhost:9999', object)
 DRb.thread.join
